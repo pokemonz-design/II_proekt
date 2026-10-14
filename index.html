@@ -250,13 +250,14 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
+    align-items: stretch;
   }
 
   /* Карточка */
   .flip-card {
     position: relative;
     width: 100%;
-    aspect-ratio: 4 / 3;
+    min-height: 280px;
 
     padding: 0;
     margin: 0;
@@ -277,6 +278,7 @@
 
     width: 100%;
     height: 100%;
+    min-height: inherit;
 
     transform-style: preserve-3d;
     transition: transform 0.55s cubic-bezier(.2, .7, .2, 1);
@@ -319,9 +321,9 @@
     transform: rotateY(180deg);
   }
 
+  /* Номер — сверху, без auto-отступа */
   .flip-card__number {
     display: block;
-    margin-bottom: auto;
 
     color: var(--blue);
 
@@ -331,9 +333,15 @@
     font-weight: 700;
   }
 
+  /* Вопрос — занимает все пространство между номером и подсказкой,
+     текст центрируется по вертикали внутри этого пространства */
   .flip-card__question {
-    display: block;
-    margin: 11px 0;
+    display: flex;
+    align-items: center;
+
+    flex: 1;
+
+    margin: 8px 0;
 
     color: var(--text);
 
@@ -343,12 +351,13 @@
     font-weight: 700;
   }
 
+  /* Синяя подсказка — в 1.5 раза больше (было 11px) */
   .flip-card__hint {
     display: block;
 
     color: var(--blue);
 
-    font-size: 11px;
+    font-size: 16.5px;
     line-height: 1.25;
     font-weight: 700;
   }
@@ -360,31 +369,33 @@
     color: var(--blue);
 
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.15;
     font-weight: 700;
   }
 
+  /* Текст ответа — на 20% больше (было 12.5px) */
   .flip-card__text {
     display: block;
 
     color: var(--text);
 
-    font-size: 12.5px;
-    line-height: 1.32;
+    font-size: 15px;
+    line-height: 1.35;
   }
 
+  /* Синее предупреждение — в 1.5 раза больше (было 11px) */
   .flip-card__warning {
     display: block;
 
     margin-top: auto;
-    padding-top: 8px;
+    padding-top: 10px;
 
     border-top: 1px solid rgba(53, 106, 165, 0.2);
 
     color: var(--blue-dark);
 
-    font-size: 11px;
+    font-size: 16.5px;
     line-height: 1.28;
     font-weight: 700;
   }
@@ -410,6 +421,10 @@
     .ai-interview__title {
       font-size: 23px;
     }
+
+    .flip-card {
+      min-height: 300px;
+    }
   }
 
   @media (max-width: 430px) {
@@ -418,7 +433,7 @@
     }
 
     .flip-card {
-      aspect-ratio: 16 / 10;
+      min-height: 240px;
     }
 
     .ai-interview__title {
