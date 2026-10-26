@@ -1,25 +1,4 @@
-*   The `--purple-muted` is `#765f8c`. The user wants it to be gold (`--gold: #b8892f`).
 
-3.  **Формирование изменений**:
-*   Find `.flip-card__warning`.
-*   Change `color: var(--purple-muted);` to `color: var(--gold);`.
-*   Check if any other adjustments are needed (e.g., border color). The border is currently purple-ish. It might look better if it matches the gold tone or stays as is. Let's keep the border as is or slightly adjust it to match the gold theme for consistency, but strictly following the prompt, only the text color is requested. I'll change the color and maybe soften the border to match. `border-top: 1px solid rgba(184, 137, 47, .2);` would be a nice touch, but I'll stick to the safest: just change the text color. Actually, changing the border color to gold would make it cohesive. Let's do it.
-
-4.  **Подготовка полного кода**:
-*   Copy the entire provided HTML/CSS/JS.
-*   Apply the color change to `.flip-card__warning`.
-*   Return the full code as requested ("дай мне цлеиком готовый" implies full code, although not explicitly stated in *this* prompt, previous prompts established this pattern. I will provide the full code to be safe and easy to copy-paste).
-
-5.  **Проверка**:
-*   Front side: unaffected.
-*   Back side title: `var(--gold)`.
-*   Back side text: `var(--text)`.
-*   Back side warning: now `var(--gold)`.
-*   All looks correct.Готово. Я изменил цвет текста в блоке с предупреждением (класс `.flip-card__warning`) на золотой (`var(--gold)`), чтобы он совпадал с заголовком «Что искать в ответе». Заодно немного изменил цвет разделительной линии над этим текстом, чтобы она тоже гармонировала с золотым.
-
-Вот полный готовый код:
-
-```html
 <div class="ai-interview">
 
 <h2 class="ai-interview__title">
