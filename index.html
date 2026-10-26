@@ -1,653 +1,1068 @@
-*   The `--purple-muted` is `#765f8c`. The user wants it to be gold (`--gold: #b8892f`).
+<!DOCTYPE html>
+<html lang="ru">
 
-3.  **Формирование изменений**:
-*   Find `.flip-card__warning`.
-*   Change `color: var(--purple-muted);` to `color: var(--gold);`.
-*   Check if any other adjustments are needed (e.g., border color). The border is currently purple-ish. It might look better if it matches the gold tone or stays as is. Let's keep the border as is or slightly adjust it to match the gold theme for consistency, but strictly following the prompt, only the text color is requested. I'll change the color and maybe soften the border to match. `border-top: 1px solid rgba(184, 137, 47, .2);` would be a nice touch, but I'll stick to the safest: just change the text color. Actually, changing the border color to gold would make it cohesive. Let's do it.
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-4.  **Подготовка полного кода**:
-*   Copy the entire provided HTML/CSS/JS.
-*   Apply the color change to `.flip-card__warning`.
-*   Return the full code as requested ("дай мне цлеиком готовый" implies full code, although not explicitly stated in *this* prompt, previous prompts established this pattern. I will provide the full code to be safe and easy to copy-paste).
-
-5.  **Проверка**:
-*   Front side: unaffected.
-*   Back side title: `var(--gold)`.
-*   Back side text: `var(--text)`.
-*   Back side warning: now `var(--gold)`.
-*   All looks correct.Готово. Я изменил цвет текста в блоке с предупреждением (класс `.flip-card__warning`) на золотой (`var(--gold)`), чтобы он совпадал с заголовком «Что искать в ответе». Заодно немного изменил цвет разделительной линии над этим текстом, чтобы она тоже гармонировала с золотым.
-
-Вот полный готовый код:
-
-```html
-<div class="ai-interview">
-
-<h2 class="ai-interview__title">
-Что спросить у кандидата перед техническим интервью
-</h2>
-
-<p class="ai-interview__intro">
-Нажимайте на карточки и смотрите, на что обратить внимание
-</p>
-
-<div class="ai-interview__grid">
-
-<!-- Карточка 1 -->
-<button class="flip-card" type="button" aria-pressed="false">
-<span class="flip-card__inner">
-
-<span class="flip-card__front">
-  <span class="flip-card__number">01</span>
-
-  <span class="flip-card__question">
-    Как вы поймете, нужен ли для этой задачи ИИ?
-  </span>
-
-  <span class="flip-card__hint">
-    Посмотреть ответ →
-  </span>
-</span>
-
-<span class="flip-card__back">
-  <span class="flip-card__back-title">
-    Что искать в ответе
-  </span>
-
-  <span class="flip-card__text">
-    Кандидат сначала оценивает процесс, объем операций,
-    наличие правил и данных, а также цену ошибки.
-    Он готов предложить обычную автоматизацию,
-    если ИИ не дает преимуществ
-  </span>
-
-  <span class="flip-card__warning">
-    Насторожитесь, если кандидат предлагает модель еще до изучения процесса
-  </span>
-</span>
-
-</span>
-</button>
-
-
-<!-- Карточка 2 -->
-<button class="flip-card" type="button" aria-pressed="false">
-<span class="flip-card__inner">
-
-<span class="flip-card__front">
-  <span class="flip-card__number">02</span>
-
-  <span class="flip-card__question">
-    По каким показателям вы оцениваете результаты пилотного проекта?
-  </span>
-
-  <span class="flip-card__hint">
-    Посмотреть ответ →
-  </span>
-</span>
-
-<span class="flip-card__back">
-  <span class="flip-card__back-title">
-    Что искать в ответе
-  </span>
-
-  <span class="flip-card__text">
-    Кандидат связывает пилот с измеримым бизнес-результатом:
-    временем обработки, стоимостью операции, долей ошибок,
-    конверсией или оборачиваемостью
-  </span>
-
-  <span class="flip-card__warning">
-     Слабый соискатель считает успехом уже сам факт запуска решения
-  </span>
-</span>
-
-</span>
-</button>
-
-
-<!-- Карточка 3 -->
-<button class="flip-card" type="button" aria-pressed="false">
-<span class="flip-card__inner">
-
-<span class="flip-card__front">
-  <span class="flip-card__number">03</span>
-
-  <span class="flip-card__question">
-    Как будете проверять качество решения до запуска?
-  </span>
-
-  <span class="flip-card__hint">
-    Посмотреть ответ →
-  </span>
-</span>
-
-<span class="flip-card__back">
-  <span class="flip-card__back-title">
-    Что искать в ответе
-  </span>
-
-  <span class="flip-card__text">
-    Хороший кандидат назовет тестовые примеры,
-    пограничные случаи и критерии качества,
-    а также объяснит, что система должна делать при ошибке
-  </span>
-
-  <span class="flip-card__warning">
-    Насторожитесь, если проверка сводится к нескольким удачным примерам
-  </span>
-</span>
-
-</span>
-</button>
-
-
-<!-- Карточка 4 -->
-<button class="flip-card" type="button" aria-pressed="false">
-<span class="flip-card__inner">
-
-<span class="flip-card__front">
-  <span class="flip-card__number">04</span>
-
-  <span class="flip-card__question">
-    Что именно вы делали в предыдущем AI-проекте сами?
-  </span>
-
-  <span class="flip-card__hint">
-    Посмотреть ответ →
-  </span>
-</span>
-
-<span class="flip-card__back">
-  <span class="flip-card__back-title">
-    Что искать в ответе
-  </span>
-
-  <span class="flip-card__text">
-    Кандидат четко отделяет свой вклад от результата команды:
-    объясняет, какие решения принимал лично,
-    что разрабатывал или проверял сам
-  </span>
-
-  <span class="flip-card__warning">
-    Слабый кандидат говорит преимущественно «мы» и не может объяснить в чем заключался его личный вклад
-  </span>
-</span>
-
-</span>
-</button>
-
-
-<!-- Карточка 5 -->
-<button class="flip-card" type="button" aria-pressed="false">
-<span class="flip-card__inner">
-
-<span class="flip-card__front">
-  <span class="flip-card__number">05</span>
-
-  <span class="flip-card__question">
-    Расскажите о пилоте, который пришлось остановить
-  </span>
-
-  <span class="flip-card__hint">
-    Посмотреть ответ →
-  </span>
-</span>
-
-<span class="flip-card__back">
-  <span class="flip-card__back-title">
-    Что искать в ответе
-  </span>
-
-  <span class="flip-card__text">
-    Практик способен привести неудачный эксперимент
-    и объяснить причину: не подтвердился эффект,
-    качество оказалось недостаточным или затраты не оправдались
-  </span>
-
-  <span class="flip-card__warning">
-    Если все проекты были «успешными», стоит подробнее расспросить о результатах
-  </span>
-</span>
-
-</span>
-</button>
-
-
-<!-- Карточка 6 -->
-<button class="flip-card" type="button" aria-pressed="false">
-<span class="flip-card__inner">
-
-<span class="flip-card__front">
-  <span class="flip-card__number">06</span>
-
-  <span class="flip-card__question">
-    Кто должен отвечать за решение после запуска?
-  </span>
-
-  <span class="flip-card__hint">
-    Посмотреть ответ →
-  </span>
-</span>
-
-<span class="flip-card__back">
-  <span class="flip-card__back-title">
-    Что искать в ответе
-  </span>
-
-  <span class="flip-card__text">
-    Сильный кандидат думает дальше пилота:
-    кто контролирует качество, отвечает за сбои,
-    изменения, данные и развитие решения после запуска
-  </span>
-
-  <span class="flip-card__warning">
-    Слабый кандидат считает, что после запуска проект завершен
-  </span>
-</span>
-
-</span>
-</button>
-
-</div>
-
-</div>
-
+<title>Примеры вакансий для AI-проектов</title>
 
 <style>
 
-.ai-interview {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+  }
 
---navy: #0a164d;
---text: #243858;
+  .ai-vacancy-widget {
 
---blue-front: #d8eafa;
---blue-front-hover: #cfe4f7;
---blue-accent: #1967c9;
---blue-border: #bfd7ed;
+    --navy: #0a164d;
+    --text: #243858;
 
---purple-back: #eadffa;
---purple-muted: #765f8c;
---purple-border: #d8c7eb;
+    --blue-light: #d8eafa;
+    --blue: #1967c9;
 
---gold: #b8892f;
+    --purple-light: #eadbfa;
+    --purple: #8134d2;
 
-width: 100%;
-max-width: 757px;
+    --violet-light: #dfcff5;
+    --violet: #6626bd;
 
-margin: 0 auto;
+    --orange-light: #fae4bd;
+    --orange: #d96f00;
 
-color: var(--text);
+    width: 757px;
+    height: 370px; 
 
-font-family: Arial, Helvetica, sans-serif;
-}
+    margin: 0 auto;
 
+    overflow: hidden;
 
-.ai-interview,
-.ai-interview * {
-box-sizing: border-box;
-}
+    background: #ffffff;
+    color: var(--navy);
 
+    font-family: Arial, Helvetica, sans-serif;
 
-/* Заголовок */
+    box-sizing: border-box;
+  }
 
-.ai-interview__title {
+  .ai-vacancy-widget * {
+    box-sizing: border-box;
+  }
 
-margin: 0 0 8px;
 
-font-family: Georgia, "Times New Roman", serif;
+  /* =========================
+     ШАПКА (Стиль как в референсе)
+     ========================= */
 
-font-size: 20px;
-line-height: 1.15;
-font-weight: 700;
+  .vacancy-header {
+    padding: 12px 14px 10px; 
+  }
 
-color: var(--navy);
-}
+  .vacancy-title {
+    margin: 0 0 5px;
 
+    color: var(--navy);
 
-/* Подводка */
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    line-height: 1.15;
+    font-weight: 700;
+  }
 
-.ai-interview__intro {
+  .vacancy-subtitle {
+    margin: 0;
+    max-width: 650px;
 
-max-width: 650px;
+    color: #40536d;
 
-margin: 0 0 18px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    line-height: 1.4;
+  }
 
-font-family: Georgia, "Times New Roman", serif;
 
-font-size: 15px;
-line-height: 1.4;
+  /* =========================
+     ОСНОВНАЯ ОБЛАСТЬ
+     ========================= */
 
-color: #40536d;
-}
+  .vacancy-body {
 
+    display: grid;
 
-/* Сетка */
+    grid-template-columns: 205px 1fr;
 
-.ai-interview__grid {
+    gap: 8px;
 
-display: grid;
+    height: 299px; 
 
-grid-template-columns: repeat(3, 1fr);
+    padding: 0 8px 8px;
+  }
 
-gap: 12px;
 
-align-items: stretch;
-}
+  /* =========================
+     ВКЛАДКИ
+     ========================= */
 
+  .vacancy-tabs {
 
-/* Карточка */
+    display: grid;
 
-.flip-card {
+    grid-template-rows: repeat(4, 1fr);
 
-position: relative;
+    gap: 5px;
 
-width: 100%;
+    min-height: 0;
+  }
 
-min-height: 280px;
+  .vacancy-tab {
 
-margin: 0;
-padding: 0;
+    position: relative;
 
-border: 0;
+    width: 100%;
 
-background: transparent;
+    padding: 8px 10px;
 
-cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 7px;
 
-perspective: 1200px;
+    font-family: Arial, Helvetica, sans-serif;
 
-font: inherit;
+    text-align: left;
 
-text-align: left;
+    cursor: pointer;
 
--webkit-tap-highlight-color: transparent;
-}
+    transition:
+      transform .15s ease,
+      border-color .15s ease,
+      box-shadow .15s ease;
+  }
 
+  .vacancy-tab:hover {
+    transform: translateX(2px);
+  }
 
-.flip-card__inner {
+  .vacancy-tab.active {
 
-position: relative;
+    border-color: currentColor;
 
-display: block;
+    box-shadow: 0 3px 10px rgba(17, 35, 81, .13);
+  }
 
-width: 100%;
-height: 100%;
+  .vacancy-tab.active::after {
 
-min-height: inherit;
+    content: "";
 
-transform-style: preserve-3d;
+    position: absolute;
 
-transition:
-transform .55s cubic-bezier(.2, .7, .2, 1);
-}
+    right: -8px;
+    top: 50%;
 
+    transform: translateY(-50%);
 
-.flip-card.is-flipped .flip-card__inner {
-transform: rotateY(180deg);
-}
+    width: 0;
+    height: 0;
 
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 8px solid currentColor;
+  }
 
-/* Обе стороны */
+  .vacancy-tab-name {
 
-.flip-card__front,
-.flip-card__back {
+    display: block;
 
-position: absolute;
+    font-size: 14.625px; 
+    line-height: 1.15;
+    font-weight: 800;
+  }
 
-inset: 0;
+  .vacancy-tab-description {
 
-display: flex;
+    display: block;
 
-flex-direction: column;
+    margin-top: 4px;
 
-width: 100%;
-height: 100%;
+    color: #40536d;
 
-padding: 17px;
+    font-size: 15.35px; 
+    line-height: 1.15;
+    font-weight: 400;
+  }
 
-border-radius: 7px;
 
-overflow: hidden;
+  /* =========================
+     ЦВЕТА ВКЛАДОК
+     ========================= */
 
-backface-visibility: hidden;
+  .vacancy-tab-1 {
+    background: var(--blue-light);
+    color: var(--blue);
+  }
 
--webkit-backface-visibility: hidden;
-}
+  .vacancy-tab-2 {
+    background: var(--purple-light);
+    color: var(--purple);
+  }
 
+  .vacancy-tab-3 {
+    background: var(--violet-light);
+    color: var(--violet);
+  }
 
-/* Лицевая сторона */
+  .vacancy-tab-4 {
+    background: var(--orange-light);
+    color: var(--orange);
+  }
 
-.flip-card__front {
 
-background: var(--blue-front);
+  /* =========================
+     ПРАВАЯ ПАНЕЛЬ
+     ========================= */
 
-border: 1px solid var(--blue-border);
+  .vacancy-panel {
 
-color: var(--text);
+    display: none;
 
-transition:
-background .15s ease,
-box-shadow .15s ease,
-transform .15s ease;
-}
+    height: 100%;
 
+    border-radius: 8px;
 
-/* Оборот */
+    overflow: hidden;
+  }
 
-.flip-card__back {
+  .vacancy-panel.active {
 
-background: var(--purple-back);
+    display: flex;
 
-border: 1px solid var(--purple-border);
+    flex-direction: column;
+  }
 
-color: var(--text);
+  .vacancy-panel-1 {
+    background: var(--blue-light);
+  }
 
-transform: rotateY(180deg);
-}
+  .vacancy-panel-2 {
+    background: var(--purple-light);
+  }
 
+  .vacancy-panel-3 {
+    background: var(--violet-light);
+  }
 
-/* Номер */
+  .vacancy-panel-4 {
+    background: var(--orange-light);
+  }
 
-.flip-card__number {
 
-display: block;
+  /* =========================
+     ВЕРХ ПАНЕЛИ
+     ========================= */
 
-color: var(--blue-accent);
+  .vacancy-panel-header {
 
-font-family: Georgia, "Times New Roman", serif;
+    display: flex;
 
-font-size: 16px;
-line-height: 1;
+    justify-content: space-between;
+    align-items: center;
 
-font-weight: 700;
-}
+    gap: 12px;
 
+    min-height: 51px;
 
-/* Вопрос */
+    padding: 8px 11px;
 
-.flip-card__question {
+    border-bottom: 1px solid rgba(255,255,255,.85);
+  }
 
-display: flex;
+  .vacancy-panel-heading {
+    min-width: 0;
+  }
 
-align-items: center;
+  .vacancy-panel-title {
 
-flex: 1;
+    display: block;
 
-margin: 8px 0;
+    color: var(--navy);
 
-color: var(--navy);
+    font-size: 18px;
+    line-height: 1.08;
+    font-weight: 800;
+  }
 
-font-family: Georgia, "Times New Roman", serif;
 
-font-size: 17px;
-line-height: 1.2;
+  /* =========================
+     КНОПКА КОПИРОВАНИЯ
+     ========================= */
 
-font-weight: 700;
-}
+  .copy-vacancy {
 
+    flex: 0 0 auto;
 
-/* Посмотреть ответ */
+    min-width: 156px; /* Увеличено для нового шрифта */
+    height: 36px; /* Увеличено для нового шрифта */
 
-.flip-card__hint {
+    padding: 0 12px;
 
-display: block;
+    border: 1px solid #295a77;
+    border-radius: 5px;
 
-color: var(--blue-accent);
+    background: #295a77;
+    color: #ffffff;
 
-font-size: 15px;
-line-height: 1.2;
+    font-family: Arial, Helvetica, sans-serif;
 
-font-weight: 700;
-}
+    font-size: 13.65px; /* Увеличено в 1.3 раза (было 10.5px) */
+    line-height: 1;
+    font-weight: 700;
 
+    cursor: pointer;
 
-/* Что искать в ответе — золотой акцент */
+    transition:
+      background .15s ease,
+      transform .15s ease;
+  }
 
-.flip-card__back-title {
+  .copy-vacancy:hover {
 
-display: block;
+    background: #214c67;
 
-margin-bottom: 12px;
+    transform: translateY(-1px);
+  }
 
-color: var(--gold);
+  .copy-vacancy.copied {
 
-font-family: Georgia, "Times New Roman", serif;
+    background: #23835c;
+    border-color: #23835c;
+  }
 
-font-size: 15px;
-line-height: 1.15;
 
-font-weight: 700;
-}
+  /* =========================
+     ТЕКСТ ВАКАНСИИ
+     ========================= */
 
+  .vacancy-content {
 
-/* Основная интерпретация */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 
-.flip-card__text {
+    flex: 1;
 
-display: block;
+    min-height: 0;
 
-color: var(--text);
+    padding: 6px;
+  }
 
-font-size: 15px;
-line-height: 1.35;
+  .vacancy-section {
 
-font-weight: 400;
-}
+    padding: 8px 10px;
+    
+    flex: 0 0 auto; 
 
+    background: rgba(255,255,255,.48);
 
-/* Предупреждение (Теперь золотое) */
+    border: 1px solid rgba(255,255,255,.82);
 
-.flip-card__warning {
+    border-radius: 6px;
 
-display: block;
+    overflow: hidden;
+  }
 
-margin-top: auto;
+  .vacancy-section-title {
 
-padding-top: 10px;
+    margin: 0 0 6px;
 
-border-top: 1px solid rgba(184, 137, 47, .3); /* Золотистая линия */
+    font-size: 13.5px;
+    line-height: 1;
+    font-weight: 800;
 
-color: var(--gold); /* Изменено на золотой */
+    text-transform: uppercase;
+  }
 
-font-size: 15px;
-line-height: 1.3;
+  .vacancy-section p {
 
-font-weight: 400;
-}
+    margin: 0;
 
+    color: var(--text);
 
-/* Hover */
+    font-size: 15.5px;
+    line-height: 1.3;
+  }
 
-.flip-card:hover .flip-card__front {
 
-background: var(--blue-front-hover);
+  /* =========================
+     ЦВЕТА ЗАГОЛОВКОВ
+     ========================= */
 
-border-color: var(--blue-accent);
+  .vacancy-panel-1 .vacancy-section-title {
+    color: var(--blue);
+  }
 
-box-shadow:
-0 7px 20px rgba(45, 69, 104, .14);
+  .vacancy-panel-2 .vacancy-section-title {
+    color: var(--purple);
+  }
 
-transform: translateY(-1px);
-}
+  .vacancy-panel-3 .vacancy-section-title {
+    color: var(--violet);
+  }
 
+  .vacancy-panel-4 .vacancy-section-title {
+    color: var(--orange);
+  }
 
-/* Фокус */
 
-.flip-card:focus-visible {
+  /* =========================
+     ФОКУС
+     ========================= */
 
-outline: 3px solid var(--blue-accent);
+  .vacancy-tab:focus-visible,
+  .copy-vacancy:focus-visible {
 
-outline-offset: 3px;
-
-border-radius: 7px;
-}
-
-
-/* Планшет */
-
-@media (max-width: 650px) {
-
-.ai-interview__grid {
-grid-template-columns: repeat(2, 1fr);
-}
-
-.flip-card {
-min-height: 300px;
-}
-
-}
-
-
-/* Телефон */
-
-@media (max-width: 430px) {
-
-.ai-interview__grid {
-grid-template-columns: 1fr;
-}
-
-.flip-card {
-min-height: 240px;
-}
-
-.ai-interview__title {
-font-size: 19px;
-}
-
-}
-
-
-/* Без анимации */
-
-@media (prefers-reduced-motion: reduce) {
-
-.flip-card__inner {
-transition: none;
-}
-
-}
+    outline: 2px solid var(--navy);
+    outline-offset: 2px;
+  }
 
 </style>
+
+</head>
+
+
+<body>
+
+
+<div class="ai-vacancy-widget" id="aiVacancyWidget">
+
+
+  <!-- ШАПКА -->
+
+  <div class="vacancy-header">
+
+    <h2 class="vacancy-title">
+      Примеры вакансий для AI-проектов
+    </h2>
+
+    <div class="vacancy-subtitle">
+      Выберите нужную вакансию, скопируйте ее описание и отправьте HR
+    </div>
+
+  </div>
+
+
+  <div class="vacancy-body">
+
+
+    <!-- =========================
+         ВКЛАДКИ
+         ========================= -->
+
+    <div class="vacancy-tabs" role="tablist">
+
+
+      <button
+        class="vacancy-tab vacancy-tab-1 active"
+        data-vacancy="vacancy1"
+        role="tab"
+        aria-selected="true">
+
+        <span class="vacancy-tab-name">
+          AI/LLM Engineer
+        </span>
+
+        <span class="vacancy-tab-description">
+          Ассистенты и ИИ-агенты
+        </span>
+
+      </button>
+
+
+      <button
+        class="vacancy-tab vacancy-tab-2"
+        data-vacancy="vacancy2"
+        role="tab"
+        aria-selected="false">
+
+        <span class="vacancy-tab-name">
+          Data Scientist LLM/NLP
+        </span>
+
+        <span class="vacancy-tab-description">
+          Дообучение LLM
+        </span>
+
+      </button>
+
+
+      <button
+        class="vacancy-tab vacancy-tab-3"
+        data-vacancy="vacancy3"
+        role="tab"
+        aria-selected="false">
+
+        <span class="vacancy-tab-name">
+          ML Data Scientist
+        </span>
+
+        <span class="vacancy-tab-description">
+          Собственная ML-модель
+        </span>
+
+      </button>
+
+
+      <button
+        class="vacancy-tab vacancy-tab-4"
+        data-vacancy="vacancy4"
+        role="tab"
+        aria-selected="false">
+
+        <span class="vacancy-tab-name">
+          AI Product Manager / AI Product Owner
+        </span>
+
+        <span class="vacancy-tab-description">
+          Развитие ИИ-продукта
+        </span>
+
+      </button>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         AI/LLM ENGINEER
+         ========================= -->
+
+    <section
+      class="vacancy-panel vacancy-panel-1 active"
+      id="vacancy1">
+
+
+      <div class="vacancy-panel-header">
+
+        <div class="vacancy-panel-heading">
+
+          <span class="vacancy-panel-title">
+            AI/LLM Engineer
+          </span>
+
+        </div>
+
+
+        <button
+          class="copy-vacancy"
+          type="button">
+          Скопировать
+        </button>
+
+      </div>
+
+
+      <div class="vacancy-content">
+
+
+        <div class="vacancy-section">
+
+          <h3 class="vacancy-section-title">
+            Обязанности
+          </h3>
+
+          <p>
+            Разработка и внедрение AI-ассистентов и AI-агентов
+            на базе LLM, построение RAG-решений на корпоративных
+            данных. Интеграция AI-сервисов с внутренними системами
+            по API. Настройка агентных сценариев и tool calling,
+            тестирование качества и запуск решений в эксплуатацию.
+          </p>
+
+        </div>
+
+
+        <div class="vacancy-section">
+
+          <h3 class="vacancy-section-title">
+            Требования
+          </h3>
+
+          <p>
+            Python, опыт работы с LLM API, RAG,
+            векторными базами данных, LangChain,
+            LangGraph, LlamaIndex или аналогичными фреймворками.
+          </p>
+
+        </div>
+
+
+      </div>
+
+
+      <textarea class="copy-source" hidden>Название вакансии: AI/LLM Engineer
+
+Обязанности: разработка и внедрение AI-ассистентов и AI-агентов на базе LLM, построение RAG-решений на корпоративных данных. Интеграция AI-сервисов с внутренними системами по API. Настройка агентных сценариев и tool calling, тестирование качества и запуск решений в эксплуатацию.
+
+Требования: Python, опыт работы с LLM API, RAG, векторными базами данных, LangChain, LangGraph, LlamaIndex или аналогичными фреймворками.</textarea>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         DATA SCIENTIST LLM/NLP
+         ========================= -->
+
+    <section
+      class="vacancy-panel vacancy-panel-2"
+      id="vacancy2">
+
+
+      <div class="vacancy-panel-header">
+
+        <div class="vacancy-panel-heading">
+
+          <span class="vacancy-panel-title">
+            Data Scientist LLM/NLP
+          </span>
+
+        </div>
+
+
+        <button
+          class="copy-vacancy"
+          type="button">
+          Скопировать
+        </button>
+
+      </div>
+
+
+      <div class="vacancy-content">
+
+
+        <div class="vacancy-section">
+
+          <h3 class="vacancy-section-title">
+            Обязанности
+          </h3>
+
+          <p>
+            Дообучение и настройка ML/LLM-моделей,
+            подготовка и проведение экспериментов.
+          </p>
+
+        </div>
+
+
+        <div class="vacancy-section">
+
+          <h3 class="vacancy-section-title">
+            Требования
+          </h3>
+
+          <p>
+            Python, ML и статистика, PyTorch или TensorFlow,
+            Hugging Face, NLP/LLM.
+          </p>
+
+        </div>
+
+
+      </div>
+
+
+      <textarea class="copy-source" hidden>Название вакансии: Data Scientist LLM/NLP
+
+Обязанности: дообучение и настройка ML/LLM-моделей, подготовка и проведение экспериментов.
+
+Требования: Python, ML и статистика, PyTorch или TensorFlow, Hugging Face, NLP/LLM.</textarea>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         ML DATA SCIENTIST
+         ========================= -->
+
+    <section
+      class="vacancy-panel vacancy-panel-3"
+      id="vacancy3">
+
+
+      <div class="vacancy-panel-header">
+
+        <div class="vacancy-panel-heading">
+
+          <span class="vacancy-panel-title">
+            ML Data Scientist
+          </span>
+
+        </div>
+
+
+        <button
+          class="copy-vacancy"
+          type="button">
+          Скопировать
+        </button>
+
+      </div>
+
+
+      <div class="vacancy-content">
+
+
+        <div class="vacancy-section">
+
+          <h3 class="vacancy-section-title">
+            Обязанности
+          </h3>
+
+          <p>
+            Разработка и тестирование ML-моделей,
+            подготовка признаков, проведение экспериментов,
+            выбор метрик качества и участие во внедрении модели.
+          </p>
+
+        </div>
+
+
+        <div class="vacancy-section">
+
+          <h3 class="vacancy-section-title">
+            Требования
+          </h3>
+
+          <p>
+            Python, SQL, статистика, машинное обучение,
+            scikit-learn, CatBoost, XGBoost или аналогичный стек.
+            Дополнительно — опыт решения задач, аналогичных вашей.
+          </p>
+
+        </div>
+
+
+      </div>
+
+
+      <textarea class="copy-source" hidden>Название вакансии: ML Data Scientist
+
+Обязанности: разработка и тестирование ML-моделей, подготовка признаков, проведение экспериментов, выбор метрик качества и участие во внедрении модели.
+
+Требования: Python, SQL, статистика, машинное обучение, scikit-learn, CatBoost, XGBoost или аналогичный стек. Дополнительно — опыт решения задач, аналогичных вашей.</textarea>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         AI PRODUCT MANAGER
+         ========================= -->
+
+    <section
+      class="vacancy-panel vacancy-panel-4"
+      id="vacancy4">
+
+
+      <div class="vacancy-panel-header">
+
+        <div class="vacancy-panel-heading">
+
+          <span class="vacancy-panel-title">
+            AI Product Manager / AI Product Owner
+          </span>
+
+        </div>
+
+
+        <button
+          class="copy-vacancy"
+          type="button">
+          Скопировать
+        </button>
+
+      </div>
+
+
+      <div class="vacancy-content">
+
+
+        <div class="vacancy-section">
+
+          <h3 class="vacancy-section-title">
+            Обязанности
+          </h3>
+
+          <p>
+            Развитие ИИ-продукта, сбор и приоритизация требований
+            пользователей. Постановка задач аналитикам
+            и разработчикам. Управление продуктовыми метриками
+            и контроль результатов внедрения.
+          </p>
+
+        </div>
+
+
+        <div class="vacancy-section">
+
+          <h3 class="vacancy-section-title">
+            Требования
+          </h3>
+
+          <p>
+            Опыт управления цифровыми продуктами,
+            опыт запуска AI/ML/LLM-решений.
+            Опыт работы с командами разработки и Data Science,
+            понимание возможностей и ограничений LLM.
+          </p>
+
+        </div>
+
+
+      </div>
+
+
+      <textarea class="copy-source" hidden>Название вакансии: AI Product Manager / AI Product Owner
+
+Обязанности: развитие ИИ-продукта, сбор и приоритизация требований пользователей. Постановка задач аналитикам и разработчикам. Управление продуктовыми метриками и контроль результатов внедрения.
+
+Требования: опыт управления цифровыми продуктами, опыт запуска AI/ML/LLM-решений. Опыт работы с командами разработки и Data Science, понимание возможностей и ограничений LLM.</textarea>
+
+
+    </section>
+
+
+  </div>
+
+</div>
+
 
 
 <script>
 
-document
-.querySelectorAll('.flip-card')
-.forEach(function(card) {
+(function () {
 
-card.addEventListener('click', function() {
 
-const isFlipped =
-  card.classList.toggle('is-flipped');
+  const widget =
+    document.getElementById('aiVacancyWidget');
 
-card.setAttribute(
-  'aria-pressed',
-  isFlipped ? 'true' : 'false'
-);
 
-});
+  if (!widget) {
+    return;
+  }
 
-});
+
+
+  /* =========================
+     ПЕРЕКЛЮЧЕНИЕ ВКЛАДОК
+     ========================= */
+
+
+  const tabs =
+    widget.querySelectorAll('.vacancy-tab');
+
+
+  const panels =
+    widget.querySelectorAll('.vacancy-panel');
+
+
+
+  tabs.forEach(function(tab) {
+
+
+    tab.addEventListener('click', function() {
+
+
+      const vacancyId =
+        tab.dataset.vacancy;
+
+
+
+      tabs.forEach(function(item) {
+
+        item.classList.remove('active');
+
+        item.setAttribute(
+          'aria-selected',
+          'false'
+        );
+
+      });
+
+
+
+      panels.forEach(function(panel) {
+
+        panel.classList.remove('active');
+
+      });
+
+
+
+      tab.classList.add('active');
+
+
+      tab.setAttribute(
+        'aria-selected',
+        'true'
+      );
+
+
+
+      const target =
+        widget.querySelector(
+          '#' + vacancyId
+        );
+
+
+      if (target) {
+
+        target.classList.add('active');
+
+      }
+
+
+    });
+
+
+  });
+
+
+
+  /* =========================
+     КОПИРОВАНИЕ
+     ========================= */
+
+
+  const copyButtons =
+    widget.querySelectorAll('.copy-vacancy');
+
+
+
+  copyButtons.forEach(function(button) {
+
+
+    button.addEventListener(
+      'click',
+      async function() {
+
+
+        const panel =
+          button.closest('.vacancy-panel');
+
+
+        const source =
+          panel.querySelector('.copy-source');
+
+        if (!source) {
+          return;
+        }
+
+
+        const text =
+          source.value.trim();
+
+
+
+        try {
+
+
+          await navigator.clipboard.writeText(text);
+
+
+          showCopied(button);
+
+
+        }
+
+
+        catch (error) {
+
+
+          const temporary =
+            document.createElement('textarea');
+
+
+          temporary.value = text;
+
+          temporary.style.position =
+            'fixed';
+
+          temporary.style.opacity =
+            '0';
+
+          document.body.appendChild(
+            temporary
+          );
+
+
+          temporary.focus();
+
+          temporary.select();
+
+
+          document.execCommand('copy');
+
+
+          temporary.remove();
+
+
+          showCopied(button);
+
+
+        }
+
+
+      }
+    );
+
+
+  });
+
+
+
+  /* =========================
+     НАДПИСЬ "СКОПИРОВАНО"
+     ========================= */
+
+
+  function showCopied(button) {
+
+
+    button.textContent =
+      'Скопировано ✓';
+
+
+    button.classList.add('copied');
+
+
+    setTimeout(function() {
+
+
+      button.textContent =
+        'Скопировать';
+
+
+      button.classList.remove('copied');
+
+
+    }, 1600);
+
+
+  }
+
+
+})();
 
 </script>
+
+
+</body>
+
+</html>
