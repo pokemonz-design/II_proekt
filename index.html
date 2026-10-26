@@ -1,1068 +1,653 @@
-<!DOCTYPE html>
-<html lang="ru">
+*   The `--purple-muted` is `#765f8c`. The user wants it to be gold (`--gold: #b8892f`).
+
+3.  **Формирование изменений**:
+*   Find `.flip-card__warning`.
+*   Change `color: var(--purple-muted);` to `color: var(--gold);`.
+*   Check if any other adjustments are needed (e.g., border color). The border is currently purple-ish. It might look better if it matches the gold tone or stays as is. Let's keep the border as is or slightly adjust it to match the gold theme for consistency, but strictly following the prompt, only the text color is requested. I'll change the color and maybe soften the border to match. `border-top: 1px solid rgba(184, 137, 47, .2);` would be a nice touch, but I'll stick to the safest: just change the text color. Actually, changing the border color to gold would make it cohesive. Let's do it.
+
+4.  **Подготовка полного кода**:
+*   Copy the entire provided HTML/CSS/JS.
+*   Apply the color change to `.flip-card__warning`.
+*   Return the full code as requested ("дай мне цлеиком готовый" implies full code, although not explicitly stated in *this* prompt, previous prompts established this pattern. I will provide the full code to be safe and easy to copy-paste).
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+5.  **Проверка**:
+*   Front side: unaffected.
+*   Back side title: `var(--gold)`.
+*   Back side text: `var(--text)`.
+*   Back side warning: now `var(--gold)`.
+*   All looks correct.Готово. Я изменил цвет текста в блоке с предупреждением (класс `.flip-card__warning`) на золотой (`var(--gold)`), чтобы он совпадал с заголовком «Что искать в ответе». Заодно немного изменил цвет разделительной линии над этим текстом, чтобы она тоже гармонировала с золотым.
 
-<title>Примеры вакансий для AI-проектов</title>
+Вот полный готовый код:
 
-<style>
+```html
+<div class="ai-interview">
 
-  html,
-  body {
-    margin: 0;
-    padding: 0;
-    background: #ffffff;
-  }
+<h2 class="ai-interview__title">
+Что спросить у кандидата перед техническим интервью
+</h2>
+
+<p class="ai-interview__intro">
+Нажимайте на карточки и смотрите, на что обратить внимание
+</p>
+
+<div class="ai-interview__grid">
+
+<!-- Карточка 1 -->
+<button class="flip-card" type="button" aria-pressed="false">
+<span class="flip-card__inner">
+
+<span class="flip-card__front">
+  <span class="flip-card__number">01</span>
+
+  <span class="flip-card__question">
+    Как вы поймете, нужен ли для этой задачи ИИ?
+  </span>
 
-  .ai-vacancy-widget {
+  <span class="flip-card__hint">
+    Посмотреть ответ →
+  </span>
+</span>
+
+<span class="flip-card__back">
+  <span class="flip-card__back-title">
+    Что искать в ответе
+  </span>
 
-    --navy: #0a164d;
-    --text: #243858;
+  <span class="flip-card__text">
+    Кандидат сначала оценивает процесс, объем операций,
+    наличие правил и данных, а также цену ошибки.
+    Он готов предложить обычную автоматизацию,
+    если ИИ не дает преимуществ
+  </span>
+
+  <span class="flip-card__warning">
+    Насторожитесь, если кандидат предлагает модель еще до изучения процесса
+  </span>
+</span>
+
+</span>
+</button>
+
+
+<!-- Карточка 2 -->
+<button class="flip-card" type="button" aria-pressed="false">
+<span class="flip-card__inner">
+
+<span class="flip-card__front">
+  <span class="flip-card__number">02</span>
+
+  <span class="flip-card__question">
+    По каким показателям вы оцениваете результаты пилотного проекта?
+  </span>
+
+  <span class="flip-card__hint">
+    Посмотреть ответ →
+  </span>
+</span>
 
-    --blue-light: #d8eafa;
-    --blue: #1967c9;
+<span class="flip-card__back">
+  <span class="flip-card__back-title">
+    Что искать в ответе
+  </span>
 
-    --purple-light: #eadbfa;
-    --purple: #8134d2;
+  <span class="flip-card__text">
+    Кандидат связывает пилот с измеримым бизнес-результатом:
+    временем обработки, стоимостью операции, долей ошибок,
+    конверсией или оборачиваемостью
+  </span>
+
+  <span class="flip-card__warning">
+     Слабый соискатель считает успехом уже сам факт запуска решения
+  </span>
+</span>
 
-    --violet-light: #dfcff5;
-    --violet: #6626bd;
+</span>
+</button>
+
 
-    --orange-light: #fae4bd;
-    --orange: #d96f00;
+<!-- Карточка 3 -->
+<button class="flip-card" type="button" aria-pressed="false">
+<span class="flip-card__inner">
+
+<span class="flip-card__front">
+  <span class="flip-card__number">03</span>
+
+  <span class="flip-card__question">
+    Как будете проверять качество решения до запуска?
+  </span>
 
-    width: 757px;
-    height: 370px; 
+  <span class="flip-card__hint">
+    Посмотреть ответ →
+  </span>
+</span>
 
-    margin: 0 auto;
+<span class="flip-card__back">
+  <span class="flip-card__back-title">
+    Что искать в ответе
+  </span>
 
-    overflow: hidden;
+  <span class="flip-card__text">
+    Хороший кандидат назовет тестовые примеры,
+    пограничные случаи и критерии качества,
+    а также объяснит, что система должна делать при ошибке
+  </span>
 
-    background: #ffffff;
-    color: var(--navy);
+  <span class="flip-card__warning">
+    Насторожитесь, если проверка сводится к нескольким удачным примерам
+  </span>
+</span>
 
-    font-family: Arial, Helvetica, sans-serif;
+</span>
+</button>
+
 
-    box-sizing: border-box;
-  }
+<!-- Карточка 4 -->
+<button class="flip-card" type="button" aria-pressed="false">
+<span class="flip-card__inner">
+
+<span class="flip-card__front">
+  <span class="flip-card__number">04</span>
+
+  <span class="flip-card__question">
+    Что именно вы делали в предыдущем AI-проекте сами?
+  </span>
 
-  .ai-vacancy-widget * {
-    box-sizing: border-box;
-  }
+  <span class="flip-card__hint">
+    Посмотреть ответ →
+  </span>
+</span>
 
+<span class="flip-card__back">
+  <span class="flip-card__back-title">
+    Что искать в ответе
+  </span>
 
-  /* =========================
-     ШАПКА (Стиль как в референсе)
-     ========================= */
+  <span class="flip-card__text">
+    Кандидат четко отделяет свой вклад от результата команды:
+    объясняет, какие решения принимал лично,
+    что разрабатывал или проверял сам
+  </span>
 
-  .vacancy-header {
-    padding: 12px 14px 10px; 
-  }
+  <span class="flip-card__warning">
+    Слабый кандидат говорит преимущественно «мы» и не может объяснить в чем заключался его личный вклад
+  </span>
+</span>
 
-  .vacancy-title {
-    margin: 0 0 5px;
+</span>
+</button>
 
-    color: var(--navy);
 
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 20px;
-    line-height: 1.15;
-    font-weight: 700;
-  }
+<!-- Карточка 5 -->
+<button class="flip-card" type="button" aria-pressed="false">
+<span class="flip-card__inner">
 
-  .vacancy-subtitle {
-    margin: 0;
-    max-width: 650px;
+<span class="flip-card__front">
+  <span class="flip-card__number">05</span>
 
-    color: #40536d;
+  <span class="flip-card__question">
+    Расскажите о пилоте, который пришлось остановить
+  </span>
 
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 15px;
-    line-height: 1.4;
-  }
+  <span class="flip-card__hint">
+    Посмотреть ответ →
+  </span>
+</span>
 
+<span class="flip-card__back">
+  <span class="flip-card__back-title">
+    Что искать в ответе
+  </span>
 
-  /* =========================
-     ОСНОВНАЯ ОБЛАСТЬ
-     ========================= */
+  <span class="flip-card__text">
+    Практик способен привести неудачный эксперимент
+    и объяснить причину: не подтвердился эффект,
+    качество оказалось недостаточным или затраты не оправдались
+  </span>
 
-  .vacancy-body {
+  <span class="flip-card__warning">
+    Если все проекты были «успешными», стоит подробнее расспросить о результатах
+  </span>
+</span>
 
-    display: grid;
+</span>
+</button>
 
-    grid-template-columns: 205px 1fr;
 
-    gap: 8px;
+<!-- Карточка 6 -->
+<button class="flip-card" type="button" aria-pressed="false">
+<span class="flip-card__inner">
 
-    height: 299px; 
+<span class="flip-card__front">
+  <span class="flip-card__number">06</span>
 
-    padding: 0 8px 8px;
-  }
+  <span class="flip-card__question">
+    Кто должен отвечать за решение после запуска?
+  </span>
 
+  <span class="flip-card__hint">
+    Посмотреть ответ →
+  </span>
+</span>
 
-  /* =========================
-     ВКЛАДКИ
-     ========================= */
+<span class="flip-card__back">
+  <span class="flip-card__back-title">
+    Что искать в ответе
+  </span>
 
-  .vacancy-tabs {
+  <span class="flip-card__text">
+    Сильный кандидат думает дальше пилота:
+    кто контролирует качество, отвечает за сбои,
+    изменения, данные и развитие решения после запуска
+  </span>
 
-    display: grid;
+  <span class="flip-card__warning">
+    Слабый кандидат считает, что после запуска проект завершен
+  </span>
+</span>
 
-    grid-template-rows: repeat(4, 1fr);
+</span>
+</button>
 
-    gap: 5px;
-
-    min-height: 0;
-  }
-
-  .vacancy-tab {
-
-    position: relative;
-
-    width: 100%;
-
-    padding: 8px 10px;
-
-    border: 1px solid transparent;
-    border-radius: 7px;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    text-align: left;
-
-    cursor: pointer;
-
-    transition:
-      transform .15s ease,
-      border-color .15s ease,
-      box-shadow .15s ease;
-  }
-
-  .vacancy-tab:hover {
-    transform: translateX(2px);
-  }
-
-  .vacancy-tab.active {
-
-    border-color: currentColor;
-
-    box-shadow: 0 3px 10px rgba(17, 35, 81, .13);
-  }
-
-  .vacancy-tab.active::after {
-
-    content: "";
-
-    position: absolute;
-
-    right: -8px;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    width: 0;
-    height: 0;
-
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
-    border-left: 8px solid currentColor;
-  }
-
-  .vacancy-tab-name {
-
-    display: block;
-
-    font-size: 14.625px; 
-    line-height: 1.15;
-    font-weight: 800;
-  }
-
-  .vacancy-tab-description {
-
-    display: block;
-
-    margin-top: 4px;
-
-    color: #40536d;
-
-    font-size: 15.35px; 
-    line-height: 1.15;
-    font-weight: 400;
-  }
-
-
-  /* =========================
-     ЦВЕТА ВКЛАДОК
-     ========================= */
-
-  .vacancy-tab-1 {
-    background: var(--blue-light);
-    color: var(--blue);
-  }
-
-  .vacancy-tab-2 {
-    background: var(--purple-light);
-    color: var(--purple);
-  }
-
-  .vacancy-tab-3 {
-    background: var(--violet-light);
-    color: var(--violet);
-  }
-
-  .vacancy-tab-4 {
-    background: var(--orange-light);
-    color: var(--orange);
-  }
-
-
-  /* =========================
-     ПРАВАЯ ПАНЕЛЬ
-     ========================= */
-
-  .vacancy-panel {
-
-    display: none;
-
-    height: 100%;
-
-    border-radius: 8px;
-
-    overflow: hidden;
-  }
-
-  .vacancy-panel.active {
-
-    display: flex;
-
-    flex-direction: column;
-  }
-
-  .vacancy-panel-1 {
-    background: var(--blue-light);
-  }
-
-  .vacancy-panel-2 {
-    background: var(--purple-light);
-  }
-
-  .vacancy-panel-3 {
-    background: var(--violet-light);
-  }
-
-  .vacancy-panel-4 {
-    background: var(--orange-light);
-  }
-
-
-  /* =========================
-     ВЕРХ ПАНЕЛИ
-     ========================= */
-
-  .vacancy-panel-header {
-
-    display: flex;
-
-    justify-content: space-between;
-    align-items: center;
-
-    gap: 12px;
-
-    min-height: 51px;
-
-    padding: 8px 11px;
-
-    border-bottom: 1px solid rgba(255,255,255,.85);
-  }
-
-  .vacancy-panel-heading {
-    min-width: 0;
-  }
-
-  .vacancy-panel-title {
-
-    display: block;
-
-    color: var(--navy);
-
-    font-size: 18px;
-    line-height: 1.08;
-    font-weight: 800;
-  }
-
-
-  /* =========================
-     КНОПКА КОПИРОВАНИЯ
-     ========================= */
-
-  .copy-vacancy {
-
-    flex: 0 0 auto;
-
-    min-width: 156px; /* Увеличено для нового шрифта */
-    height: 36px; /* Увеличено для нового шрифта */
-
-    padding: 0 12px;
-
-    border: 1px solid #295a77;
-    border-radius: 5px;
-
-    background: #295a77;
-    color: #ffffff;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 13.65px; /* Увеличено в 1.3 раза (было 10.5px) */
-    line-height: 1;
-    font-weight: 700;
-
-    cursor: pointer;
-
-    transition:
-      background .15s ease,
-      transform .15s ease;
-  }
-
-  .copy-vacancy:hover {
-
-    background: #214c67;
-
-    transform: translateY(-1px);
-  }
-
-  .copy-vacancy.copied {
-
-    background: #23835c;
-    border-color: #23835c;
-  }
-
-
-  /* =========================
-     ТЕКСТ ВАКАНСИИ
-     ========================= */
-
-  .vacancy-content {
-
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-
-    flex: 1;
-
-    min-height: 0;
-
-    padding: 6px;
-  }
-
-  .vacancy-section {
-
-    padding: 8px 10px;
-    
-    flex: 0 0 auto; 
-
-    background: rgba(255,255,255,.48);
-
-    border: 1px solid rgba(255,255,255,.82);
-
-    border-radius: 6px;
-
-    overflow: hidden;
-  }
-
-  .vacancy-section-title {
-
-    margin: 0 0 6px;
-
-    font-size: 13.5px;
-    line-height: 1;
-    font-weight: 800;
-
-    text-transform: uppercase;
-  }
-
-  .vacancy-section p {
-
-    margin: 0;
-
-    color: var(--text);
-
-    font-size: 15.5px;
-    line-height: 1.3;
-  }
-
-
-  /* =========================
-     ЦВЕТА ЗАГОЛОВКОВ
-     ========================= */
-
-  .vacancy-panel-1 .vacancy-section-title {
-    color: var(--blue);
-  }
-
-  .vacancy-panel-2 .vacancy-section-title {
-    color: var(--purple);
-  }
-
-  .vacancy-panel-3 .vacancy-section-title {
-    color: var(--violet);
-  }
-
-  .vacancy-panel-4 .vacancy-section-title {
-    color: var(--orange);
-  }
-
-
-  /* =========================
-     ФОКУС
-     ========================= */
-
-  .vacancy-tab:focus-visible,
-  .copy-vacancy:focus-visible {
-
-    outline: 2px solid var(--navy);
-    outline-offset: 2px;
-  }
-
-</style>
-
-</head>
-
-
-<body>
-
-
-<div class="ai-vacancy-widget" id="aiVacancyWidget">
-
-
-  <!-- ШАПКА -->
-
-  <div class="vacancy-header">
-
-    <h2 class="vacancy-title">
-      Примеры вакансий для AI-проектов
-    </h2>
-
-    <div class="vacancy-subtitle">
-      Выберите нужную вакансию, скопируйте ее описание и отправьте HR
-    </div>
-
-  </div>
-
-
-  <div class="vacancy-body">
-
-
-    <!-- =========================
-         ВКЛАДКИ
-         ========================= -->
-
-    <div class="vacancy-tabs" role="tablist">
-
-
-      <button
-        class="vacancy-tab vacancy-tab-1 active"
-        data-vacancy="vacancy1"
-        role="tab"
-        aria-selected="true">
-
-        <span class="vacancy-tab-name">
-          AI/LLM Engineer
-        </span>
-
-        <span class="vacancy-tab-description">
-          Ассистенты и ИИ-агенты
-        </span>
-
-      </button>
-
-
-      <button
-        class="vacancy-tab vacancy-tab-2"
-        data-vacancy="vacancy2"
-        role="tab"
-        aria-selected="false">
-
-        <span class="vacancy-tab-name">
-          Data Scientist LLM/NLP
-        </span>
-
-        <span class="vacancy-tab-description">
-          Дообучение LLM
-        </span>
-
-      </button>
-
-
-      <button
-        class="vacancy-tab vacancy-tab-3"
-        data-vacancy="vacancy3"
-        role="tab"
-        aria-selected="false">
-
-        <span class="vacancy-tab-name">
-          ML Data Scientist
-        </span>
-
-        <span class="vacancy-tab-description">
-          Собственная ML-модель
-        </span>
-
-      </button>
-
-
-      <button
-        class="vacancy-tab vacancy-tab-4"
-        data-vacancy="vacancy4"
-        role="tab"
-        aria-selected="false">
-
-        <span class="vacancy-tab-name">
-          AI Product Manager / AI Product Owner
-        </span>
-
-        <span class="vacancy-tab-description">
-          Развитие ИИ-продукта
-        </span>
-
-      </button>
-
-
-    </div>
-
-
-
-    <!-- =========================
-         AI/LLM ENGINEER
-         ========================= -->
-
-    <section
-      class="vacancy-panel vacancy-panel-1 active"
-      id="vacancy1">
-
-
-      <div class="vacancy-panel-header">
-
-        <div class="vacancy-panel-heading">
-
-          <span class="vacancy-panel-title">
-            AI/LLM Engineer
-          </span>
-
-        </div>
-
-
-        <button
-          class="copy-vacancy"
-          type="button">
-          Скопировать
-        </button>
-
-      </div>
-
-
-      <div class="vacancy-content">
-
-
-        <div class="vacancy-section">
-
-          <h3 class="vacancy-section-title">
-            Обязанности
-          </h3>
-
-          <p>
-            Разработка и внедрение AI-ассистентов и AI-агентов
-            на базе LLM, построение RAG-решений на корпоративных
-            данных. Интеграция AI-сервисов с внутренними системами
-            по API. Настройка агентных сценариев и tool calling,
-            тестирование качества и запуск решений в эксплуатацию.
-          </p>
-
-        </div>
-
-
-        <div class="vacancy-section">
-
-          <h3 class="vacancy-section-title">
-            Требования
-          </h3>
-
-          <p>
-            Python, опыт работы с LLM API, RAG,
-            векторными базами данных, LangChain,
-            LangGraph, LlamaIndex или аналогичными фреймворками.
-          </p>
-
-        </div>
-
-
-      </div>
-
-
-      <textarea class="copy-source" hidden>Название вакансии: AI/LLM Engineer
-
-Обязанности: разработка и внедрение AI-ассистентов и AI-агентов на базе LLM, построение RAG-решений на корпоративных данных. Интеграция AI-сервисов с внутренними системами по API. Настройка агентных сценариев и tool calling, тестирование качества и запуск решений в эксплуатацию.
-
-Требования: Python, опыт работы с LLM API, RAG, векторными базами данных, LangChain, LangGraph, LlamaIndex или аналогичными фреймворками.</textarea>
-
-
-    </section>
-
-
-
-    <!-- =========================
-         DATA SCIENTIST LLM/NLP
-         ========================= -->
-
-    <section
-      class="vacancy-panel vacancy-panel-2"
-      id="vacancy2">
-
-
-      <div class="vacancy-panel-header">
-
-        <div class="vacancy-panel-heading">
-
-          <span class="vacancy-panel-title">
-            Data Scientist LLM/NLP
-          </span>
-
-        </div>
-
-
-        <button
-          class="copy-vacancy"
-          type="button">
-          Скопировать
-        </button>
-
-      </div>
-
-
-      <div class="vacancy-content">
-
-
-        <div class="vacancy-section">
-
-          <h3 class="vacancy-section-title">
-            Обязанности
-          </h3>
-
-          <p>
-            Дообучение и настройка ML/LLM-моделей,
-            подготовка и проведение экспериментов.
-          </p>
-
-        </div>
-
-
-        <div class="vacancy-section">
-
-          <h3 class="vacancy-section-title">
-            Требования
-          </h3>
-
-          <p>
-            Python, ML и статистика, PyTorch или TensorFlow,
-            Hugging Face, NLP/LLM.
-          </p>
-
-        </div>
-
-
-      </div>
-
-
-      <textarea class="copy-source" hidden>Название вакансии: Data Scientist LLM/NLP
-
-Обязанности: дообучение и настройка ML/LLM-моделей, подготовка и проведение экспериментов.
-
-Требования: Python, ML и статистика, PyTorch или TensorFlow, Hugging Face, NLP/LLM.</textarea>
-
-
-    </section>
-
-
-
-    <!-- =========================
-         ML DATA SCIENTIST
-         ========================= -->
-
-    <section
-      class="vacancy-panel vacancy-panel-3"
-      id="vacancy3">
-
-
-      <div class="vacancy-panel-header">
-
-        <div class="vacancy-panel-heading">
-
-          <span class="vacancy-panel-title">
-            ML Data Scientist
-          </span>
-
-        </div>
-
-
-        <button
-          class="copy-vacancy"
-          type="button">
-          Скопировать
-        </button>
-
-      </div>
-
-
-      <div class="vacancy-content">
-
-
-        <div class="vacancy-section">
-
-          <h3 class="vacancy-section-title">
-            Обязанности
-          </h3>
-
-          <p>
-            Разработка и тестирование ML-моделей,
-            подготовка признаков, проведение экспериментов,
-            выбор метрик качества и участие во внедрении модели.
-          </p>
-
-        </div>
-
-
-        <div class="vacancy-section">
-
-          <h3 class="vacancy-section-title">
-            Требования
-          </h3>
-
-          <p>
-            Python, SQL, статистика, машинное обучение,
-            scikit-learn, CatBoost, XGBoost или аналогичный стек.
-            Дополнительно — опыт решения задач, аналогичных вашей.
-          </p>
-
-        </div>
-
-
-      </div>
-
-
-      <textarea class="copy-source" hidden>Название вакансии: ML Data Scientist
-
-Обязанности: разработка и тестирование ML-моделей, подготовка признаков, проведение экспериментов, выбор метрик качества и участие во внедрении модели.
-
-Требования: Python, SQL, статистика, машинное обучение, scikit-learn, CatBoost, XGBoost или аналогичный стек. Дополнительно — опыт решения задач, аналогичных вашей.</textarea>
-
-
-    </section>
-
-
-
-    <!-- =========================
-         AI PRODUCT MANAGER
-         ========================= -->
-
-    <section
-      class="vacancy-panel vacancy-panel-4"
-      id="vacancy4">
-
-
-      <div class="vacancy-panel-header">
-
-        <div class="vacancy-panel-heading">
-
-          <span class="vacancy-panel-title">
-            AI Product Manager / AI Product Owner
-          </span>
-
-        </div>
-
-
-        <button
-          class="copy-vacancy"
-          type="button">
-          Скопировать
-        </button>
-
-      </div>
-
-
-      <div class="vacancy-content">
-
-
-        <div class="vacancy-section">
-
-          <h3 class="vacancy-section-title">
-            Обязанности
-          </h3>
-
-          <p>
-            Развитие ИИ-продукта, сбор и приоритизация требований
-            пользователей. Постановка задач аналитикам
-            и разработчикам. Управление продуктовыми метриками
-            и контроль результатов внедрения.
-          </p>
-
-        </div>
-
-
-        <div class="vacancy-section">
-
-          <h3 class="vacancy-section-title">
-            Требования
-          </h3>
-
-          <p>
-            Опыт управления цифровыми продуктами,
-            опыт запуска AI/ML/LLM-решений.
-            Опыт работы с командами разработки и Data Science,
-            понимание возможностей и ограничений LLM.
-          </p>
-
-        </div>
-
-
-      </div>
-
-
-      <textarea class="copy-source" hidden>Название вакансии: AI Product Manager / AI Product Owner
-
-Обязанности: развитие ИИ-продукта, сбор и приоритизация требований пользователей. Постановка задач аналитикам и разработчикам. Управление продуктовыми метриками и контроль результатов внедрения.
-
-Требования: опыт управления цифровыми продуктами, опыт запуска AI/ML/LLM-решений. Опыт работы с командами разработки и Data Science, понимание возможностей и ограничений LLM.</textarea>
-
-
-    </section>
-
-
-  </div>
+</div>
 
 </div>
 
 
+<style>
+
+.ai-interview {
+
+--navy: #0a164d;
+--text: #243858;
+
+--blue-front: #d8eafa;
+--blue-front-hover: #cfe4f7;
+--blue-accent: #1967c9;
+--blue-border: #bfd7ed;
+
+--purple-back: #eadffa;
+--purple-muted: #765f8c;
+--purple-border: #d8c7eb;
+
+--gold: #b8892f;
+
+width: 100%;
+max-width: 757px;
+
+margin: 0 auto;
+
+color: var(--text);
+
+font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.ai-interview,
+.ai-interview * {
+box-sizing: border-box;
+}
+
+
+/* Заголовок */
+
+.ai-interview__title {
+
+margin: 0 0 8px;
+
+font-family: Georgia, "Times New Roman", serif;
+
+font-size: 20px;
+line-height: 1.15;
+font-weight: 700;
+
+color: var(--navy);
+}
+
+
+/* Подводка */
+
+.ai-interview__intro {
+
+max-width: 650px;
+
+margin: 0 0 18px;
+
+font-family: Georgia, "Times New Roman", serif;
+
+font-size: 15px;
+line-height: 1.4;
+
+color: #40536d;
+}
+
+
+/* Сетка */
+
+.ai-interview__grid {
+
+display: grid;
+
+grid-template-columns: repeat(3, 1fr);
+
+gap: 12px;
+
+align-items: stretch;
+}
+
+
+/* Карточка */
+
+.flip-card {
+
+position: relative;
+
+width: 100%;
+
+min-height: 280px;
+
+margin: 0;
+padding: 0;
+
+border: 0;
+
+background: transparent;
+
+cursor: pointer;
+
+perspective: 1200px;
+
+font: inherit;
+
+text-align: left;
+
+-webkit-tap-highlight-color: transparent;
+}
+
+
+.flip-card__inner {
+
+position: relative;
+
+display: block;
+
+width: 100%;
+height: 100%;
+
+min-height: inherit;
+
+transform-style: preserve-3d;
+
+transition:
+transform .55s cubic-bezier(.2, .7, .2, 1);
+}
+
+
+.flip-card.is-flipped .flip-card__inner {
+transform: rotateY(180deg);
+}
+
+
+/* Обе стороны */
+
+.flip-card__front,
+.flip-card__back {
+
+position: absolute;
+
+inset: 0;
+
+display: flex;
+
+flex-direction: column;
+
+width: 100%;
+height: 100%;
+
+padding: 17px;
+
+border-radius: 7px;
+
+overflow: hidden;
+
+backface-visibility: hidden;
+
+-webkit-backface-visibility: hidden;
+}
+
+
+/* Лицевая сторона */
+
+.flip-card__front {
+
+background: var(--blue-front);
+
+border: 1px solid var(--blue-border);
+
+color: var(--text);
+
+transition:
+background .15s ease,
+box-shadow .15s ease,
+transform .15s ease;
+}
+
+
+/* Оборот */
+
+.flip-card__back {
+
+background: var(--purple-back);
+
+border: 1px solid var(--purple-border);
+
+color: var(--text);
+
+transform: rotateY(180deg);
+}
+
+
+/* Номер */
+
+.flip-card__number {
+
+display: block;
+
+color: var(--blue-accent);
+
+font-family: Georgia, "Times New Roman", serif;
+
+font-size: 16px;
+line-height: 1;
+
+font-weight: 700;
+}
+
+
+/* Вопрос */
+
+.flip-card__question {
+
+display: flex;
+
+align-items: center;
+
+flex: 1;
+
+margin: 8px 0;
+
+color: var(--navy);
+
+font-family: Georgia, "Times New Roman", serif;
+
+font-size: 17px;
+line-height: 1.2;
+
+font-weight: 700;
+}
+
+
+/* Посмотреть ответ */
+
+.flip-card__hint {
+
+display: block;
+
+color: var(--blue-accent);
+
+font-size: 15px;
+line-height: 1.2;
+
+font-weight: 700;
+}
+
+
+/* Что искать в ответе — золотой акцент */
+
+.flip-card__back-title {
+
+display: block;
+
+margin-bottom: 12px;
+
+color: var(--gold);
+
+font-family: Georgia, "Times New Roman", serif;
+
+font-size: 15px;
+line-height: 1.15;
+
+font-weight: 700;
+}
+
+
+/* Основная интерпретация */
+
+.flip-card__text {
+
+display: block;
+
+color: var(--text);
+
+font-size: 15px;
+line-height: 1.35;
+
+font-weight: 400;
+}
+
+
+/* Предупреждение (Теперь золотое) */
+
+.flip-card__warning {
+
+display: block;
+
+margin-top: auto;
+
+padding-top: 10px;
+
+border-top: 1px solid rgba(184, 137, 47, .3); /* Золотистая линия */
+
+color: var(--gold); /* Изменено на золотой */
+
+font-size: 15px;
+line-height: 1.3;
+
+font-weight: 400;
+}
+
+
+/* Hover */
+
+.flip-card:hover .flip-card__front {
+
+background: var(--blue-front-hover);
+
+border-color: var(--blue-accent);
+
+box-shadow:
+0 7px 20px rgba(45, 69, 104, .14);
+
+transform: translateY(-1px);
+}
+
+
+/* Фокус */
+
+.flip-card:focus-visible {
+
+outline: 3px solid var(--blue-accent);
+
+outline-offset: 3px;
+
+border-radius: 7px;
+}
+
+
+/* Планшет */
+
+@media (max-width: 650px) {
+
+.ai-interview__grid {
+grid-template-columns: repeat(2, 1fr);
+}
+
+.flip-card {
+min-height: 300px;
+}
+
+}
+
+
+/* Телефон */
+
+@media (max-width: 430px) {
+
+.ai-interview__grid {
+grid-template-columns: 1fr;
+}
+
+.flip-card {
+min-height: 240px;
+}
+
+.ai-interview__title {
+font-size: 19px;
+}
+
+}
+
+
+/* Без анимации */
+
+@media (prefers-reduced-motion: reduce) {
+
+.flip-card__inner {
+transition: none;
+}
+
+}
+
+</style>
+
 
 <script>
 
-(function () {
+document
+.querySelectorAll('.flip-card')
+.forEach(function(card) {
 
+card.addEventListener('click', function() {
 
-  const widget =
-    document.getElementById('aiVacancyWidget');
+const isFlipped =
+  card.classList.toggle('is-flipped');
 
+card.setAttribute(
+  'aria-pressed',
+  isFlipped ? 'true' : 'false'
+);
 
-  if (!widget) {
-    return;
-  }
+});
 
-
-
-  /* =========================
-     ПЕРЕКЛЮЧЕНИЕ ВКЛАДОК
-     ========================= */
-
-
-  const tabs =
-    widget.querySelectorAll('.vacancy-tab');
-
-
-  const panels =
-    widget.querySelectorAll('.vacancy-panel');
-
-
-
-  tabs.forEach(function(tab) {
-
-
-    tab.addEventListener('click', function() {
-
-
-      const vacancyId =
-        tab.dataset.vacancy;
-
-
-
-      tabs.forEach(function(item) {
-
-        item.classList.remove('active');
-
-        item.setAttribute(
-          'aria-selected',
-          'false'
-        );
-
-      });
-
-
-
-      panels.forEach(function(panel) {
-
-        panel.classList.remove('active');
-
-      });
-
-
-
-      tab.classList.add('active');
-
-
-      tab.setAttribute(
-        'aria-selected',
-        'true'
-      );
-
-
-
-      const target =
-        widget.querySelector(
-          '#' + vacancyId
-        );
-
-
-      if (target) {
-
-        target.classList.add('active');
-
-      }
-
-
-    });
-
-
-  });
-
-
-
-  /* =========================
-     КОПИРОВАНИЕ
-     ========================= */
-
-
-  const copyButtons =
-    widget.querySelectorAll('.copy-vacancy');
-
-
-
-  copyButtons.forEach(function(button) {
-
-
-    button.addEventListener(
-      'click',
-      async function() {
-
-
-        const panel =
-          button.closest('.vacancy-panel');
-
-
-        const source =
-          panel.querySelector('.copy-source');
-
-        if (!source) {
-          return;
-        }
-
-
-        const text =
-          source.value.trim();
-
-
-
-        try {
-
-
-          await navigator.clipboard.writeText(text);
-
-
-          showCopied(button);
-
-
-        }
-
-
-        catch (error) {
-
-
-          const temporary =
-            document.createElement('textarea');
-
-
-          temporary.value = text;
-
-          temporary.style.position =
-            'fixed';
-
-          temporary.style.opacity =
-            '0';
-
-          document.body.appendChild(
-            temporary
-          );
-
-
-          temporary.focus();
-
-          temporary.select();
-
-
-          document.execCommand('copy');
-
-
-          temporary.remove();
-
-
-          showCopied(button);
-
-
-        }
-
-
-      }
-    );
-
-
-  });
-
-
-
-  /* =========================
-     НАДПИСЬ "СКОПИРОВАНО"
-     ========================= */
-
-
-  function showCopied(button) {
-
-
-    button.textContent =
-      'Скопировано ✓';
-
-
-    button.classList.add('copied');
-
-
-    setTimeout(function() {
-
-
-      button.textContent =
-        'Скопировать';
-
-
-      button.classList.remove('copied');
-
-
-    }, 1600);
-
-
-  }
-
-
-})();
+});
 
 </script>
-
-
-</body>
-
-</html>
