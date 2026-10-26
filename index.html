@@ -1,631 +1,653 @@
+*   The `--purple-muted` is `#765f8c`. The user wants it to be gold (`--gold: #b8892f`).
+
+3.  **Формирование изменений**:
+*   Find `.flip-card__warning`.
+*   Change `color: var(--purple-muted);` to `color: var(--gold);`.
+*   Check if any other adjustments are needed (e.g., border color). The border is currently purple-ish. It might look better if it matches the gold tone or stays as is. Let's keep the border as is or slightly adjust it to match the gold theme for consistency, but strictly following the prompt, only the text color is requested. I'll change the color and maybe soften the border to match. `border-top: 1px solid rgba(184, 137, 47, .2);` would be a nice touch, but I'll stick to the safest: just change the text color. Actually, changing the border color to gold would make it cohesive. Let's do it.
+
+4.  **Подготовка полного кода**:
+*   Copy the entire provided HTML/CSS/JS.
+*   Apply the color change to `.flip-card__warning`.
+*   Return the full code as requested ("дай мне цлеиком готовый" implies full code, although not explicitly stated in *this* prompt, previous prompts established this pattern. I will provide the full code to be safe and easy to copy-paste).
+
+5.  **Проверка**:
+*   Front side: unaffected.
+*   Back side title: `var(--gold)`.
+*   Back side text: `var(--text)`.
+*   Back side warning: now `var(--gold)`.
+*   All looks correct.Готово. Я изменил цвет текста в блоке с предупреждением (класс `.flip-card__warning`) на золотой (`var(--gold)`), чтобы он совпадал с заголовком «Что искать в ответе». Заодно немного изменил цвет разделительной линии над этим текстом, чтобы она тоже гармонировала с золотым.
+
+Вот полный готовый код:
+
+```html
 <div class="ai-interview">
 
-  <h2 class="ai-interview__title">
-    Что спросить у кандидата перед техническим интервью
-  </h2>
+<h2 class="ai-interview__title">
+Что спросить у кандидата перед техническим интервью
+</h2>
 
-  <p class="ai-interview__intro">
-    Нажимайте на карточки и смотрите, на что обратить внимание
-  </p>
+<p class="ai-interview__intro">
+Нажимайте на карточки и смотрите, на что обратить внимание
+</p>
 
-  <div class="ai-interview__grid">
+<div class="ai-interview__grid">
 
-    <!-- Карточка 1 -->
-    <button class="flip-card" type="button" aria-pressed="false">
-      <span class="flip-card__inner">
+<!-- Карточка 1 -->
+<button class="flip-card" type="button" aria-pressed="false">
+<span class="flip-card__inner">
 
-        <span class="flip-card__front">
-          <span class="flip-card__number">01</span>
+<span class="flip-card__front">
+  <span class="flip-card__number">01</span>
 
-          <span class="flip-card__question">
-            Как вы поймете, нужен ли для этой задачи ИИ?
-          </span>
+  <span class="flip-card__question">
+    Как вы поймете, нужен ли для этой задачи ИИ?
+  </span>
 
-          <span class="flip-card__hint">
-            Посмотреть ответ →
-          </span>
-        </span>
+  <span class="flip-card__hint">
+    Посмотреть ответ →
+  </span>
+</span>
 
-        <span class="flip-card__back">
-          <span class="flip-card__back-title">
-            Что искать в ответе
-          </span>
+<span class="flip-card__back">
+  <span class="flip-card__back-title">
+    Что искать в ответе
+  </span>
 
-          <span class="flip-card__text">
-            Кандидат сначала оценивает процесс, объем операций,
-            наличие правил и данных, а также цену ошибки.
-            Он готов предложить обычную автоматизацию,
-            если ИИ не дает преимуществ
-          </span>
+  <span class="flip-card__text">
+    Кандидат сначала оценивает процесс, объем операций,
+    наличие правил и данных, а также цену ошибки.
+    Он готов предложить обычную автоматизацию,
+    если ИИ не дает преимуществ
+  </span>
 
-          <span class="flip-card__warning">
-            Насторожитесь, если кандидат предлагает модель еще до изучения процесса
-          </span>
-        </span>
+  <span class="flip-card__warning">
+    Насторожитесь, если кандидат предлагает модель еще до изучения процесса
+  </span>
+</span>
 
-      </span>
-    </button>
-
-
-    <!-- Карточка 2 -->
-    <button class="flip-card" type="button" aria-pressed="false">
-      <span class="flip-card__inner">
-
-        <span class="flip-card__front">
-          <span class="flip-card__number">02</span>
-
-          <span class="flip-card__question">
-            По каким показателям вы оцениваете результаты пилотного проекта?
-          </span>
-
-          <span class="flip-card__hint">
-            Посмотреть ответ →
-          </span>
-        </span>
-
-        <span class="flip-card__back">
-          <span class="flip-card__back-title">
-            Что искать в ответе
-          </span>
-
-          <span class="flip-card__text">
-            Кандидат связывает пилот с измеримым бизнес-результатом:
-            временем обработки, стоимостью операции, долей ошибок,
-            конверсией или оборачиваемостью
-          </span>
-
-          <span class="flip-card__warning">
-             Слабый соискатель считает успехом уже сам факт запуска решения
-          </span>
-        </span>
-
-      </span>
-    </button>
+</span>
+</button>
 
 
-    <!-- Карточка 3 -->
-    <button class="flip-card" type="button" aria-pressed="false">
-      <span class="flip-card__inner">
+<!-- Карточка 2 -->
+<button class="flip-card" type="button" aria-pressed="false">
+<span class="flip-card__inner">
 
-        <span class="flip-card__front">
-          <span class="flip-card__number">03</span>
+<span class="flip-card__front">
+  <span class="flip-card__number">02</span>
 
-          <span class="flip-card__question">
-            Как будете проверять качество решения до запуска?
-          </span>
+  <span class="flip-card__question">
+    По каким показателям вы оцениваете результаты пилотного проекта?
+  </span>
 
-          <span class="flip-card__hint">
-            Посмотреть ответ →
-          </span>
-        </span>
+  <span class="flip-card__hint">
+    Посмотреть ответ →
+  </span>
+</span>
 
-        <span class="flip-card__back">
-          <span class="flip-card__back-title">
-            Что искать в ответе
-          </span>
+<span class="flip-card__back">
+  <span class="flip-card__back-title">
+    Что искать в ответе
+  </span>
 
-          <span class="flip-card__text">
-            Хороший кандидат назовет тестовые примеры,
-            пограничные случаи и критерии качества,
-            а также объяснит, что система должна делать при ошибке
-          </span>
+  <span class="flip-card__text">
+    Кандидат связывает пилот с измеримым бизнес-результатом:
+    временем обработки, стоимостью операции, долей ошибок,
+    конверсией или оборачиваемостью
+  </span>
 
-          <span class="flip-card__warning">
-            Насторожитесь, если проверка сводится к нескольким удачным примерам
-          </span>
-        </span>
+  <span class="flip-card__warning">
+     Слабый соискатель считает успехом уже сам факт запуска решения
+  </span>
+</span>
 
-      </span>
-    </button>
-
-
-    <!-- Карточка 4 -->
-    <button class="flip-card" type="button" aria-pressed="false">
-      <span class="flip-card__inner">
-
-        <span class="flip-card__front">
-          <span class="flip-card__number">04</span>
-
-          <span class="flip-card__question">
-            Что именно вы делали в предыдущем AI-проекте сами?
-          </span>
-
-          <span class="flip-card__hint">
-            Посмотреть ответ →
-          </span>
-        </span>
-
-        <span class="flip-card__back">
-          <span class="flip-card__back-title">
-            Что искать в ответе
-          </span>
-
-          <span class="flip-card__text">
-            Кандидат четко отделяет свой вклад от результата команды:
-            объясняет, какие решения принимал лично,
-            что разрабатывал или проверял сам
-          </span>
-
-          <span class="flip-card__warning">
-            Слабый кандидат говорит преимущественно «мы» и не может объяснить в чем заключался его личный вклад
-          </span>
-        </span>
-
-      </span>
-    </button>
+</span>
+</button>
 
 
-    <!-- Карточка 5 -->
-    <button class="flip-card" type="button" aria-pressed="false">
-      <span class="flip-card__inner">
+<!-- Карточка 3 -->
+<button class="flip-card" type="button" aria-pressed="false">
+<span class="flip-card__inner">
 
-        <span class="flip-card__front">
-          <span class="flip-card__number">05</span>
+<span class="flip-card__front">
+  <span class="flip-card__number">03</span>
 
-          <span class="flip-card__question">
-            Расскажите о пилоте, который пришлось остановить
-          </span>
+  <span class="flip-card__question">
+    Как будете проверять качество решения до запуска?
+  </span>
 
-          <span class="flip-card__hint">
-            Посмотреть ответ →
-          </span>
-        </span>
+  <span class="flip-card__hint">
+    Посмотреть ответ →
+  </span>
+</span>
 
-        <span class="flip-card__back">
-          <span class="flip-card__back-title">
-            Что искать в ответе
-          </span>
+<span class="flip-card__back">
+  <span class="flip-card__back-title">
+    Что искать в ответе
+  </span>
 
-          <span class="flip-card__text">
-            Практик способен привести неудачный эксперимент
-            и объяснить причину: не подтвердился эффект,
-            качество оказалось недостаточным или затраты не оправдались
-          </span>
+  <span class="flip-card__text">
+    Хороший кандидат назовет тестовые примеры,
+    пограничные случаи и критерии качества,
+    а также объяснит, что система должна делать при ошибке
+  </span>
 
-          <span class="flip-card__warning">
-            Если все проекты были «успешными», стоит подробнее расспросить о результатах
-          </span>
-        </span>
+  <span class="flip-card__warning">
+    Насторожитесь, если проверка сводится к нескольким удачным примерам
+  </span>
+</span>
 
-      </span>
-    </button>
+</span>
+</button>
 
 
-    <!-- Карточка 6 -->
-    <button class="flip-card" type="button" aria-pressed="false">
-      <span class="flip-card__inner">
+<!-- Карточка 4 -->
+<button class="flip-card" type="button" aria-pressed="false">
+<span class="flip-card__inner">
 
-        <span class="flip-card__front">
-          <span class="flip-card__number">06</span>
+<span class="flip-card__front">
+  <span class="flip-card__number">04</span>
 
-          <span class="flip-card__question">
-            Кто должен отвечать за решение после запуска?
-          </span>
+  <span class="flip-card__question">
+    Что именно вы делали в предыдущем AI-проекте сами?
+  </span>
 
-          <span class="flip-card__hint">
-            Посмотреть ответ →
-          </span>
-        </span>
+  <span class="flip-card__hint">
+    Посмотреть ответ →
+  </span>
+</span>
 
-        <span class="flip-card__back">
-          <span class="flip-card__back-title">
-            Что искать в ответе
-          </span>
+<span class="flip-card__back">
+  <span class="flip-card__back-title">
+    Что искать в ответе
+  </span>
 
-          <span class="flip-card__text">
-            Сильный кандидат думает дальше пилота:
-            кто контролирует качество, отвечает за сбои,
-            изменения, данные и развитие решения после запуска
-          </span>
+  <span class="flip-card__text">
+    Кандидат четко отделяет свой вклад от результата команды:
+    объясняет, какие решения принимал лично,
+    что разрабатывал или проверял сам
+  </span>
 
-          <span class="flip-card__warning">
-            Слабый кандидат считает, что после запуска проект завершен
-          </span>
-        </span>
+  <span class="flip-card__warning">
+    Слабый кандидат говорит преимущественно «мы» и не может объяснить в чем заключался его личный вклад
+  </span>
+</span>
 
-      </span>
-    </button>
+</span>
+</button>
 
-  </div>
+
+<!-- Карточка 5 -->
+<button class="flip-card" type="button" aria-pressed="false">
+<span class="flip-card__inner">
+
+<span class="flip-card__front">
+  <span class="flip-card__number">05</span>
+
+  <span class="flip-card__question">
+    Расскажите о пилоте, который пришлось остановить
+  </span>
+
+  <span class="flip-card__hint">
+    Посмотреть ответ →
+  </span>
+</span>
+
+<span class="flip-card__back">
+  <span class="flip-card__back-title">
+    Что искать в ответе
+  </span>
+
+  <span class="flip-card__text">
+    Практик способен привести неудачный эксперимент
+    и объяснить причину: не подтвердился эффект,
+    качество оказалось недостаточным или затраты не оправдались
+  </span>
+
+  <span class="flip-card__warning">
+    Если все проекты были «успешными», стоит подробнее расспросить о результатах
+  </span>
+</span>
+
+</span>
+</button>
+
+
+<!-- Карточка 6 -->
+<button class="flip-card" type="button" aria-pressed="false">
+<span class="flip-card__inner">
+
+<span class="flip-card__front">
+  <span class="flip-card__number">06</span>
+
+  <span class="flip-card__question">
+    Кто должен отвечать за решение после запуска?
+  </span>
+
+  <span class="flip-card__hint">
+    Посмотреть ответ →
+  </span>
+</span>
+
+<span class="flip-card__back">
+  <span class="flip-card__back-title">
+    Что искать в ответе
+  </span>
+
+  <span class="flip-card__text">
+    Сильный кандидат думает дальше пилота:
+    кто контролирует качество, отвечает за сбои,
+    изменения, данные и развитие решения после запуска
+  </span>
+
+  <span class="flip-card__warning">
+    Слабый кандидат считает, что после запуска проект завершен
+  </span>
+</span>
+
+</span>
+</button>
+
+</div>
 
 </div>
 
 
 <style>
 
-  .ai-interview {
+.ai-interview {
 
-    --navy: #0a164d;
-    --text: #243858;
+--navy: #0a164d;
+--text: #243858;
 
-    --blue-front: #d8eafa;
-    --blue-front-hover: #cfe4f7;
-    --blue-accent: #1967c9;
-    --blue-border: #bfd7ed;
+--blue-front: #d8eafa;
+--blue-front-hover: #cfe4f7;
+--blue-accent: #1967c9;
+--blue-border: #bfd7ed;
 
-    --purple-back: #eadffa;
-    --purple-muted: #765f8c;
-    --purple-border: #d8c7eb;
+--purple-back: #eadffa;
+--purple-muted: #765f8c;
+--purple-border: #d8c7eb;
 
-    --gold: #b8892f;
+--gold: #b8892f;
 
-    width: 100%;
-    max-width: 757px;
+width: 100%;
+max-width: 757px;
 
-    margin: 0 auto;
+margin: 0 auto;
 
-    color: var(--text);
+color: var(--text);
 
-    font-family: Arial, Helvetica, sans-serif;
-  }
+font-family: Arial, Helvetica, sans-serif;
+}
 
 
-  .ai-interview,
-  .ai-interview * {
-    box-sizing: border-box;
-  }
+.ai-interview,
+.ai-interview * {
+box-sizing: border-box;
+}
 
 
-  /* Заголовок */
+/* Заголовок */
 
-  .ai-interview__title {
+.ai-interview__title {
 
-    margin: 0 0 8px;
+margin: 0 0 8px;
 
-    font-family: Georgia, "Times New Roman", serif;
+font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 20px;
-    line-height: 1.15;
-    font-weight: 700;
+font-size: 20px;
+line-height: 1.15;
+font-weight: 700;
 
-    color: var(--navy);
-  }
+color: var(--navy);
+}
 
 
-  /* Подводка */
+/* Подводка */
 
-  .ai-interview__intro {
+.ai-interview__intro {
 
-    max-width: 650px;
+max-width: 650px;
 
-    margin: 0 0 18px;
+margin: 0 0 18px;
 
-    font-family: Georgia, "Times New Roman", serif;
+font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 15px;
-    line-height: 1.4;
+font-size: 15px;
+line-height: 1.4;
 
-    color: #40536d;
-  }
+color: #40536d;
+}
 
 
-  /* Сетка */
+/* Сетка */
 
-  .ai-interview__grid {
+.ai-interview__grid {
 
-    display: grid;
+display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+grid-template-columns: repeat(3, 1fr);
 
-    gap: 12px;
+gap: 12px;
 
-    align-items: stretch;
-  }
+align-items: stretch;
+}
 
 
-  /* Карточка */
+/* Карточка */
 
-  .flip-card {
+.flip-card {
 
-    position: relative;
+position: relative;
 
-    width: 100%;
+width: 100%;
 
-    min-height: 280px;
+min-height: 280px;
 
-    margin: 0;
-    padding: 0;
+margin: 0;
+padding: 0;
 
-    border: 0;
+border: 0;
 
-    background: transparent;
+background: transparent;
 
-    cursor: pointer;
+cursor: pointer;
 
-    perspective: 1200px;
+perspective: 1200px;
 
-    font: inherit;
+font: inherit;
 
-    text-align: left;
+text-align: left;
 
-    -webkit-tap-highlight-color: transparent;
-  }
+-webkit-tap-highlight-color: transparent;
+}
 
 
-  .flip-card__inner {
+.flip-card__inner {
 
-    position: relative;
+position: relative;
 
-    display: block;
+display: block;
 
-    width: 100%;
-    height: 100%;
+width: 100%;
+height: 100%;
 
-    min-height: inherit;
+min-height: inherit;
 
-    transform-style: preserve-3d;
+transform-style: preserve-3d;
 
-    transition:
-      transform .55s cubic-bezier(.2, .7, .2, 1);
-  }
+transition:
+transform .55s cubic-bezier(.2, .7, .2, 1);
+}
 
 
-  .flip-card.is-flipped .flip-card__inner {
-    transform: rotateY(180deg);
-  }
+.flip-card.is-flipped .flip-card__inner {
+transform: rotateY(180deg);
+}
 
 
-  /* Обе стороны */
+/* Обе стороны */
 
-  .flip-card__front,
-  .flip-card__back {
+.flip-card__front,
+.flip-card__back {
 
-    position: absolute;
+position: absolute;
 
-    inset: 0;
+inset: 0;
 
-    display: flex;
+display: flex;
 
-    flex-direction: column;
+flex-direction: column;
 
-    width: 100%;
-    height: 100%;
+width: 100%;
+height: 100%;
 
-    padding: 17px;
+padding: 17px;
 
-    border-radius: 7px;
+border-radius: 7px;
 
-    overflow: hidden;
+overflow: hidden;
 
-    backface-visibility: hidden;
+backface-visibility: hidden;
 
-    -webkit-backface-visibility: hidden;
-  }
+-webkit-backface-visibility: hidden;
+}
 
 
-  /* Лицевая сторона */
+/* Лицевая сторона */
 
-  .flip-card__front {
+.flip-card__front {
 
-    background: var(--blue-front);
+background: var(--blue-front);
 
-    border: 1px solid var(--blue-border);
+border: 1px solid var(--blue-border);
 
-    color: var(--text);
+color: var(--text);
 
-    transition:
-      background .15s ease,
-      box-shadow .15s ease,
-      transform .15s ease;
-  }
+transition:
+background .15s ease,
+box-shadow .15s ease,
+transform .15s ease;
+}
 
 
-  /* Оборот */
+/* Оборот */
 
-  .flip-card__back {
+.flip-card__back {
 
-    background: var(--purple-back);
+background: var(--purple-back);
 
-    border: 1px solid var(--purple-border);
+border: 1px solid var(--purple-border);
 
-    color: var(--text);
+color: var(--text);
 
-    transform: rotateY(180deg);
-  }
+transform: rotateY(180deg);
+}
 
 
-  /* Номер */
+/* Номер */
 
-  .flip-card__number {
+.flip-card__number {
 
-    display: block;
+display: block;
 
-    color: var(--blue-accent);
+color: var(--blue-accent);
 
-    font-family: Georgia, "Times New Roman", serif;
+font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 16px;
-    line-height: 1;
+font-size: 16px;
+line-height: 1;
 
-    font-weight: 700;
-  }
+font-weight: 700;
+}
 
 
-  /* Вопрос */
+/* Вопрос */
 
-  .flip-card__question {
+.flip-card__question {
 
-    display: flex;
+display: flex;
 
-    align-items: center;
+align-items: center;
 
-    flex: 1;
+flex: 1;
 
-    margin: 8px 0;
+margin: 8px 0;
 
-    color: var(--navy);
+color: var(--navy);
 
-    font-family: Georgia, "Times New Roman", serif;
+font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 17px;
-    line-height: 1.2;
+font-size: 17px;
+line-height: 1.2;
 
-    font-weight: 700;
-  }
+font-weight: 700;
+}
 
 
-  /* Посмотреть ответ */
+/* Посмотреть ответ */
 
-  .flip-card__hint {
+.flip-card__hint {
 
-    display: block;
+display: block;
 
-    color: var(--blue-accent);
+color: var(--blue-accent);
 
-    font-size: 15px;
-    line-height: 1.2;
+font-size: 15px;
+line-height: 1.2;
 
-    font-weight: 700;
-  }
+font-weight: 700;
+}
 
 
-  /* Что искать в ответе — золотой акцент */
+/* Что искать в ответе — золотой акцент */
 
-  .flip-card__back-title {
+.flip-card__back-title {
 
-    display: block;
+display: block;
 
-    margin-bottom: 12px;
+margin-bottom: 12px;
 
-    color: var(--gold);
+color: var(--gold);
 
-    font-family: Georgia, "Times New Roman", serif;
+font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 15px;
-    line-height: 1.15;
+font-size: 15px;
+line-height: 1.15;
 
-    font-weight: 700;
-  }
+font-weight: 700;
+}
 
 
-  /* Основная интерпретация */
+/* Основная интерпретация */
 
-  .flip-card__text {
+.flip-card__text {
 
-    display: block;
+display: block;
 
-    color: var(--text);
+color: var(--text);
 
-    font-size: 15px;
-    line-height: 1.35;
+font-size: 15px;
+line-height: 1.35;
 
-    font-weight: 400;
-  }
+font-weight: 400;
+}
 
 
-  /* Предупреждение */
+/* Предупреждение (Теперь золотое) */
 
-  .flip-card__warning {
+.flip-card__warning {
 
-    display: block;
+display: block;
 
-    margin-top: auto;
+margin-top: auto;
 
-    padding-top: 10px;
+padding-top: 10px;
 
-    border-top: 1px solid rgba(123, 69, 199, .18);
+border-top: 1px solid rgba(184, 137, 47, .3); /* Золотистая линия */
 
-    color: var(--purple-muted);
+color: var(--gold); /* Изменено на золотой */
 
-    font-size: 15px;
-    line-height: 1.3;
+font-size: 15px;
+line-height: 1.3;
 
-    font-weight: 400;
-  }
+font-weight: 400;
+}
 
 
-  /* Hover */
+/* Hover */
 
-  .flip-card:hover .flip-card__front {
+.flip-card:hover .flip-card__front {
 
-    background: var(--blue-front-hover);
+background: var(--blue-front-hover);
 
-    border-color: var(--blue-accent);
+border-color: var(--blue-accent);
 
-    box-shadow:
-      0 7px 20px rgba(45, 69, 104, .14);
+box-shadow:
+0 7px 20px rgba(45, 69, 104, .14);
 
-    transform: translateY(-1px);
-  }
+transform: translateY(-1px);
+}
 
 
-  /* Фокус */
+/* Фокус */
 
-  .flip-card:focus-visible {
+.flip-card:focus-visible {
 
-    outline: 3px solid var(--blue-accent);
+outline: 3px solid var(--blue-accent);
 
-    outline-offset: 3px;
+outline-offset: 3px;
 
-    border-radius: 7px;
-  }
+border-radius: 7px;
+}
 
 
-  /* Планшет */
+/* Планшет */
 
-  @media (max-width: 650px) {
+@media (max-width: 650px) {
 
-    .ai-interview__grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+.ai-interview__grid {
+grid-template-columns: repeat(2, 1fr);
+}
 
-    .flip-card {
-      min-height: 300px;
-    }
+.flip-card {
+min-height: 300px;
+}
 
-  }
+}
 
 
-  /* Телефон */
+/* Телефон */
 
-  @media (max-width: 430px) {
+@media (max-width: 430px) {
 
-    .ai-interview__grid {
-      grid-template-columns: 1fr;
-    }
+.ai-interview__grid {
+grid-template-columns: 1fr;
+}
 
-    .flip-card {
-      min-height: 240px;
-    }
+.flip-card {
+min-height: 240px;
+}
 
-    .ai-interview__title {
-      font-size: 19px;
-    }
+.ai-interview__title {
+font-size: 19px;
+}
 
-  }
+}
 
 
-  /* Без анимации */
+/* Без анимации */
 
-  @media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
 
-    .flip-card__inner {
-      transition: none;
-    }
+.flip-card__inner {
+transition: none;
+}
 
-  }
+}
 
 </style>
 
 
 <script>
 
-  document
-    .querySelectorAll('.flip-card')
-    .forEach(function(card) {
+document
+.querySelectorAll('.flip-card')
+.forEach(function(card) {
 
-      card.addEventListener('click', function() {
+card.addEventListener('click', function() {
 
-        const isFlipped =
-          card.classList.toggle('is-flipped');
+const isFlipped =
+  card.classList.toggle('is-flipped');
 
-        card.setAttribute(
-          'aria-pressed',
-          isFlipped ? 'true' : 'false'
-        );
+card.setAttribute(
+  'aria-pressed',
+  isFlipped ? 'true' : 'false'
+);
 
-      });
+});
 
-    });
+});
 
 </script>
